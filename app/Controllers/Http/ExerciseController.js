@@ -2,7 +2,8 @@
 const Exercise = use("App/Models/Exercise");
 
 class ExerciseController {
-  async index() {
+  async index({ request }) {
+    console.log(request.all());
     return await Exercise.all();
   }
 
@@ -18,6 +19,8 @@ class ExerciseController {
       "series",
       "waiting_time",
     ]);
+
+    console.log(request.input("action_by"));
 
     const exercise = await Exercise.create(data);
     return exercise;

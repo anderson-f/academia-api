@@ -23,10 +23,10 @@ Route.resource("clients", "ClientController")
   .middleware(["auth:jwt", "is:manager"]);
 Route.resource("exercises", "ExerciseController")
   .apiOnly()
-  .middleware(["auth:jwt", "can:gerenc_exercises"]);
+  .middleware(["auth:jwt", "can:gerenc_exercises", "audit"]);
 Route.resource("trainings", "TrainingController")
   .apiOnly()
-  .middleware(["auth:jwt", "can:gerenc_exercises"]);
+  .middleware(["auth:jwt", "can:gerenc_exercises", "audit"]);
 
 Route.resource("permissions", "PermissionController")
   .apiOnly()

@@ -40,6 +40,7 @@ const namedMiddleware = {
   guest: "Adonis/Middleware/AllowGuestOnly",
   is: "Adonis/Acl/Is",
   can: "Adonis/Acl/Can",
+  audit: "App/Middleware/Audit",
 };
 
 /*
